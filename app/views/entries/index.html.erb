@@ -1,0 +1,19 @@
+<% @entries.each do |entry| %>
+  <div class="entry">
+    <div class="entry-header">
+      <span><span class="entry-posted-by">Posted by&nbsp;</span><%= entry.author %></span>
+      <span><%= entry.date_taken %></span>
+    </div>
+    <a href="/entries/<%= entry.id %>">
+      <img class="entry-photo" src="<%= entry.photo_url %>">
+    </a>
+    <div class="entry-edit-delete">
+      <a href="/entries/<%= entry.id %>/edit">Edit</a>
+      <!-- delete -->
+      <form action="/entries/<%= entry.id %>" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+  </div>
+<% end %>
