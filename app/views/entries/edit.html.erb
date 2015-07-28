@@ -1,0 +1,12 @@
+<form action="/entries/<%= @entry.id %>" method="post">
+  <input type="hidden" name="_method" value="put" />
+  <p>
+    <label for="author">Author:</label>
+    <input id="author" name="entry[author]" type="text" value="<%= @entry.author%>">
+  </p>
+  <p>
+    <label for="photo_url">Body:</label>
+    <input id="photo_url" name="entry[photo_url]" type="text" value="<%= @entry.photo_url%>">
+  </p>
+  <button type="submit">Submit</button>
+</form>
